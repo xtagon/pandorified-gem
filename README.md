@@ -8,6 +8,19 @@ Installation
 
 	gem install pandorified
 
+Getting Started
+---------------
+
+The easiest way to get started is by using the `Pandorified::Session` class:
+
+	require 'pandorified'
+	
+	my_bot_session = Pandorified::Session.new(MY_BOTID)
+	first_response = my_bot_session.talk('Hello World!')
+	puts(first_response)
+
+In the example above, replace `MY_BOTID` with the actual botid of the Pandorabots chat bot you want to talk to.
+
 Documentation
 -------------
 
