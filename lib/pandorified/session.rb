@@ -1,4 +1,5 @@
 require 'pandorified/result'
+require 'pandorified/exceptions'
 
 module Pandorified
 	class Session
@@ -24,7 +25,7 @@ module Pandorified
 				@custid ||= result.custid
 				result.that
 			else
-				raise "Pandorabots returned status #{result.status}: #{result.message}"
+				raise Pandorified::Exceptions::PandorabotsError, "Pandorabots returned status #{result.status}: #{result.message}"
 			end
 		end
 	end
