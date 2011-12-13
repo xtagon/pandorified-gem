@@ -10,27 +10,27 @@ module Pandorified
 		end
 
 		def status
-			@xml.xpath('/result/@status').first.value.to_i
+			@status ||= @xml.xpath('/result/@status').first.value.to_i
 		end
 
 		def botid
-			@xml.xpath('/result/@botid').first.value
+			@botid ||= @xml.xpath('/result/@botid').first.value
 		end
 
 		def custid
-			@xml.xpath('/result/@custid').first.value
+			@custid ||= @xml.xpath('/result/@custid').first.value
 		end
 
 		def input
-			@xml.xpath('/result/input').first.text
+			@input ||= @xml.xpath('/result/input').first.text
 		end
 
 		def that
-			@xml.xpath('/result/that').first.text
+			@that ||= @xml.xpath('/result/that').first.text
 		end
 
 		def message
-			@xml.xpath('/result/message').first.text
+			@message ||= @xml.xpath('/result/message').first.text
 		end
 	end
 end
