@@ -15,6 +15,7 @@ module Pandorified
 		end
 
 		# Send a message to this session's bot and receive a response.
+		# If Pandorabots responds with an error, {Pandorified::Exceptions::PandorabotsError} is raised.
 		#
 		# @param [String] input Text to say to the bot.
 		#
