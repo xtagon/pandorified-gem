@@ -26,6 +26,15 @@ Documentation
 
 Documentation is available [here](http://rubydoc.info/github/xtagon/pandorified/).
 
+Contributing
+------------
+
+### Want to help make Pandorified more awesome?
+
+If you've found a bug or have a feature suggestion, let me know on the [issue tracker](http://github.com/xtagon/pandorified/issues).
+
+I welcome all suggestions, questions, and other feedback. Feel free to [drop me a line](mailto:xtagon@gmail.com).
+
 Author
 ------
 
