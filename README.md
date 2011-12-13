@@ -24,7 +24,7 @@ In the example above, replace `MY_BOTID` with the actual botid of the Pandorabot
 Documentation
 -------------
 
-Documentation is available [here](http://rubydoc.info/github/xtagon/pandorified/).
+Documentation is available [here](http://rubydoc.info/github/xtagon/pandorified/master/frames).
 
 Contributing
 ------------
