@@ -22,7 +22,7 @@ module Pandorified
 		# @return [String] The bot's response text.
 		def talk(input)
 			result = Pandorified::Result.new(botid: @botid, custid: @custid, input: input)
-			if result.status.zero?
+			if result.success?
 				@custid ||= result.custid
 				result.that
 			else

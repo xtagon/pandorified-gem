@@ -32,5 +32,16 @@ module Pandorified
 		def message
 			@message ||= @xml.xpath('/result/message').first.text
 		end
+
+		def success?
+			self.status.zero?
+		end
+
+		alias_method :ok?, :success?
+		alias_method :successful?, :success?
+
+		def error?
+			!self.success?
+		end
 	end
 end
