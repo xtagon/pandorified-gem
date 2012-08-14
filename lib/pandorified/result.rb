@@ -43,5 +43,7 @@ module Pandorified
 		def error?
 			!self.success?
 		end
+
+		alias_method :to_s, :that
 	end
 end
