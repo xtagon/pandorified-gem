@@ -1,7 +1,9 @@
 require 'pandorified/result'
-require 'pandorified/exceptions'
 
 module Pandorified
+	# Raised when Pandorabots returns an API result with a non-zero status.
+	class PandorabotsError < StandardError; end
+
 	class Session
 		# A new session for conversing with a bot.
 		#
@@ -37,7 +39,7 @@ module Pandorified
 		# @return [String] The bot's response text.
 		def talk!(input)
 			result = self.talk(input)
-			raise Pandorified::Exceptions::PandorabotsError, "Pandorabots returned status #{result.status}: #{result.message}" if result.error?
+			raise Pandorified::PandorabotsError, "Pandorabots returned status #{result.status}: #{result.message}" if result.error?
 		end
 	end
 end
