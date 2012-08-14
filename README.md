@@ -24,14 +24,14 @@ In the example above, replace `MY_BOTID` with the actual botid of the Pandorabot
 Documentation
 -------------
 
-Documentation is available [here](http://rubydoc.info/github/xtagon/pandorified/master/frames).
+Documentation is available [here](http://rubydoc.info/gems/pandorified/frames).
 
 Contributing
 ------------
 
 ### Want to help make Pandorified more awesome?
 
-If you've found a bug or have a feature suggestion, let me know on the [issue tracker](http://github.com/xtagon/pandorified/issues).
+If you've found a bug or have a feature suggestion, let me know on the [issue tracker](https://bitbucket.org/xtagon/pandorified/issues?status=new&status=open).
 
 I welcome all suggestions, questions, and other feedback. Feel free to [drop me a line](mailto:xtagon@gmail.com).
 
@@ -43,7 +43,7 @@ Author
 License
 -------
 
-Copyright © 2011 Justin Workman
+Copyright © 2011-2012 Justin Workman
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
