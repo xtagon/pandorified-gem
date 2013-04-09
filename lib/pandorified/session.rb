@@ -40,6 +40,7 @@ module Pandorified
 		def talk!(input)
 			result = self.talk(input)
 			raise Pandorified::PandorabotsError, "Pandorabots returned status #{result.status}: #{result.message}" if result.error?
+			result
 		end
 	end
 end
