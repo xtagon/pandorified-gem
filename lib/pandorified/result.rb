@@ -11,7 +11,7 @@ module Pandorified
 
 		# @return [String] The bot's response to the input.
 		def that
-			@that ||= @xml.xpath('/result/that').first.text
+			@that ||= @xml.xpath('/result/that').first.text.strip
 		end
 
 		alias_method :to_s, :that
