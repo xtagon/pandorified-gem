@@ -1,44 +1,42 @@
 Summary
 -------
 
-Pandorified makes it easy for your Ruby scripts to interact with chat bots hosted on Pandorabots.
+Pandorified is a simple Ruby wrapper for the Pandorabots API. Talk to chat bots in your Ruby scripts!
 
 Installation
 ------------
 
 	gem install pandorified
 
+Or add Pandorified to your project's Gemfile:
+
+	gem 'pandorified'
+
 Getting Started
 ---------------
 
-The easiest way to get started is by using the `Pandorified::Session` class:
+To interact with the Pandorabots, you need to know the BOTID of the bot you wish to talk to. If you have published your own bot, the BOTID will be listed on your Botmaster page.
+
+Here is a basic example:
 
 	require 'pandorified'
 	
-	my_bot_session = Pandorified::Session.new(MY_BOTID)
-	first_response = my_bot_session.talk('Hello World!')
-	puts(first_response)
+	CHOMSKY_BOTID = 'b0dafd24ee35a477'
+	
+	# Send a message to Chomsky and print the response
+	puts Pandorified.talk!("Hello, Bot!", CHOMSKY_BOTID)
 
-In the example above, replace `MY_BOTID` with the actual botid of the Pandorabots chat bot you want to talk to.
-
-Documentation
--------------
-
-Documentation is available [here](http://rubydoc.info/gems/pandorified/frames).
+Full documentation is available [here](http://rubydoc.info/gems/pandorified/frames). If anything in the documentation is not clear, please [report it as a bug][1].
 
 Contributing
 ------------
 
-### Want to help make Pandorified more awesome?
-
-If you've found a bug or have a feature suggestion, let me know on the [issue tracker](https://bitbucket.org/xtagon/pandorified/issues?status=new&status=open).
-
-I welcome all suggestions, questions, and other feedback. Feel free to [drop me a line](mailto:xtagon@gmail.com).
+If you've found a bug or have a feature suggestion, let me know on the [issue tracker][1] or [send me an e-mail][2]. I welcome all feedback, and I'd love to hear about what cool things you've made with this!
 
 Author
 ------
 
-[Justin Workman](mailto:xtagon@gmail.com)
+[Justin Workman][2]
 
 License
 -------
@@ -50,3 +48,6 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+[1]: https://bitbucket.org/xtagon/pandorified/issues?status=new&status=open
+[2]: mailto:xtagon@gmail.com
