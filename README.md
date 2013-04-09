@@ -26,6 +26,12 @@ Here is a basic example:
 	# Send a message to Chomsky and print the response
 	puts Pandorified.talk!("Hello, Bot!", CHOMSKY_BOTID)
 
+If you want the bot to remember who you are, you can create a session object and re-use it.
+
+	bot = Pandorified::Session.new('b0dafd24ee35a477')
+	puts bot.talk!("Hello")
+	puts bot.talk!("Goodbye now!")
+
 Full documentation is available [here](http://rubydoc.info/gems/pandorified/frames). If anything in the documentation is not clear, please [report it as a bug][1].
 
 Contributing
