@@ -7,7 +7,7 @@ module Pandorified
 	class Session
 		# A new session for conversing with a bot.
 		#
-		# @note If you choose not to specify a {custid}, one will be chosen automatically and remembered throughout the session.
+		# @note If you choose not to specify a {custid}, one will be automatically chosen and remembered throughout the session.
 		#
 		# @param [String] botid A valid Pandorabots botid.
 		# @param [String] custid An identifier used to keep track of this conversation.
@@ -18,11 +18,12 @@ module Pandorified
 
 		# Send a message to this session's bot and receive a response.
 		#
-		# @note See {Pandorified::Result} for ways to handle the response, or use {#talk!} which raises an exception on errors.
+		# See {Pandorified::Result} for how to check for an error response and get the error message.
+		# Alternatively, you can use {#talk!} instead of this method, which raises an exception when Pandorabots API returns an error.
 		#
 		# @param [String] input Text to say to the bot.
 		#
-		# @return [String] The bot's response text.
+		# @return [Pandorified::Result] The bot's response as a result object.
 		def talk(input)
 			result = Pandorified::Result.new(botid: @botid, custid: @custid, input: input)
 			@custid ||= result.custid if result.success?
@@ -30,9 +31,9 @@ module Pandorified
 		end
 
 		# Send a message to this session's bot and receive a response (if successful).
-		# If Pandorabots responds with an error, {Pandorified::Exceptions::PandorabotsError} is raised.
 		#
-		# @note See {#talk} if you want to check the {Pandorabots::Result} object for success instead of an exception being raised on error.
+		# If Pandorabots API responds with an error, {Pandorified::PandorabotsError} is raised with the specific error message.
+		# If you'd like to check for and handle the error yourself, you can use {#talk} instead of this method.
 		#
 		# @param [String] input Text to say to the bot.
 		#
@@ -40,7 +41,7 @@ module Pandorified
 		def talk!(input)
 			result = self.talk(input)
 			raise Pandorified::PandorabotsError, "Pandorabots returned status #{result.status}: #{result.message}" if result.error?
-			result
+			result.that
 		end
 	end
 end
