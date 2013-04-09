@@ -1,15 +1,15 @@
 PATH
   remote: .
   specs:
-    pandorified (0.7.0)
+    pandorified (0.8.0)
       nokogiri
       rest-client
 
 GEM
   remote: http://rubygems.org/
   specs:
-    mime-types (1.19)
-    nokogiri (1.5.5)
+    mime-types (1.22)
+    nokogiri (1.5.9)
     rest-client (1.6.7)
       mime-types (>= 1.16)
 
