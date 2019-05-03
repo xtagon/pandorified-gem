@@ -6,11 +6,11 @@ Pandorified is a simple Ruby wrapper for the Pandorabots API. Talk to chat bots 
 Installation
 ------------
 
-	gem install pandorified
+`gem install pandorified`
 
 Or add Pandorified to your project's Gemfile:
 
-	gem 'pandorified'
+`gem 'pandorified'`
 
 Getting Started
 ---------------
@@ -19,18 +19,22 @@ To interact with the Pandorabots, you need to know the BOTID of the bot you wish
 
 Here is a basic example:
 
-	require 'pandorified'
-	
-	CHOMSKY_BOTID = 'b0dafd24ee35a477'
-	
-	# Send a message to Chomsky and print the response
-	puts Pandorified.talk!("Hello, Bot!", CHOMSKY_BOTID)
+```ruby
+  require 'pandorified'
+
+  CHOMSKY_BOTID = 'b0dafd24ee35a477'
+
+  # Send a message to Chomsky and print the response
+  puts Pandorified.talk!("Hello, Bot!", CHOMSKY_BOTID)
+```
 
 If you want the bot to remember who you are, you can create a session object and re-use it.
 
-	bot = Pandorified::Session.new('b0dafd24ee35a477')
-	puts bot.talk!("Hello")
-	puts bot.talk!("Goodbye now!")
+```ruby
+  bot = Pandorified::Session.new('b0dafd24ee35a477')
+  puts bot.talk!("Hello")
+  puts bot.talk!("Goodbye now!")
+```
 
 Full documentation is available [here](http://rubydoc.info/gems/pandorified/frames). If anything in the documentation is not clear, please [report it as a bug][1].
 
