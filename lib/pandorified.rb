@@ -19,7 +19,7 @@ module Pandorified
 
   # Send a message to a bot and receive a response (if successsful).
   #
-  # If Pandorabots respondes with an error, {Pandorified::PandorabotsError} is raised.
+  # If Pandorabots responds with an error, {Pandorified::PandorabotsError} is raised.
   # If you'd rather check for and handle the error yourself, use {.talk} instead of this method.
   #
   # If you want to remember the {botid} and {custid} between multiple calls, you should use {Pandorabots::Session} instead of this method.
