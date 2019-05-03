@@ -2,7 +2,7 @@ require 'rest_client'
 require 'nokogiri'
 
 module Pandorified
-  API_URL = 'http://www.pandorabots.com/pandora/talk-xml'
+  API_URL = 'https://www.pandorabots.com/pandora/talk-xml'
 
   class Result
     def initialize(params)
