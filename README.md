@@ -43,6 +43,8 @@ Contributing
 
 If you've found a bug or have a feature suggestion, let me know on the [issue tracker][1] or [send me an e-mail][2]. I welcome all feedback, and I'd love to hear about what cool things you've made with this!
 
+Run tests with `bundle exec rspec` or just `rake`.
+
 Author
 ------
 
