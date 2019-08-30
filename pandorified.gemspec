@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'rest-client', '>= 1.7.3'
+  spec.add_runtime_dependency 'rest-client', '>= 1.10.4'
   spec.add_runtime_dependency 'nokogiri', '>= 1.8.5'
 
   spec.add_development_dependency 'rspec'
