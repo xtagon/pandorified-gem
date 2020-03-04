@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_runtime_dependency 'rest-client', '>= 1.7.3'
-  spec.add_runtime_dependency 'nokogiri', '>= 1.10.4'
+  spec.add_runtime_dependency 'nokogiri', '>= 1.10.8'
 
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'webmock'
