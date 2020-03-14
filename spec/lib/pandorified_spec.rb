@@ -23,18 +23,22 @@ RSpec.describe Pandorified do
 
       let(:response_body) do
         <<~XML
-        <result status="0" botid="#{botid}" custid="fec7cfc40e5b751a"><input>#{input}</input><that>#{that}</that></result>"
+          <result status="0" botid="#{botid}" custid="fec7cfc40e5b751a"><input>#{input}</input><that>#{that}</that></result>"
         XML
       end
 
       let(:response_headers) do
-        {content_type: 'text/xml'}
+        { content_type: 'text/xml' }
       end
 
       before :each do
-        stub_request(:post, 'https://www.pandorabots.com/pandora/talk-xml').
-          with(body: request_body).
-          to_return(status: 200, body: response_body, headers: response_headers)
+        stub_request(:post, 'https://www.pandorabots.com/pandora/talk-xml')
+          .with(body: request_body)
+          .to_return(
+            status: 200,
+            body: response_body,
+            headers: response_headers
+          )
       end
 
       it { is_expected.to eq(that) }
