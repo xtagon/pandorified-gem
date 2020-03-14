@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'pandorified/version'
 require 'pandorified/result'
 require 'pandorified/session'
