@@ -27,6 +27,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'rest-client', '>= 1.7.3'
 
   spec.add_development_dependency 'rspec'
+  spec.add_development_dependency 'rubocop'
   spec.add_development_dependency 'webmock'
   spec.add_development_dependency 'yard'
 end
