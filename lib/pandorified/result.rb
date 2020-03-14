@@ -16,7 +16,7 @@ module Pandorified
       @that ||= @xml.xpath('/result/that').first.text.strip
     end
 
-    alias_method :to_s, :that
+    alias to_s that
 
     # Check the status of this result. See {#success?} and {#error?}.
     #
@@ -27,27 +27,28 @@ module Pandorified
 
     # @return `true` if this result was successful (no error was returned by Pandorabots), `false` otherwise.
     def success?
-      self.status.zero?
+      status.zero?
     end
 
-    alias_method :ok?, :success?
-    alias_method :successful?, :success?
+    alias ok? success?
+    alias successful? success?
 
     # @note After checking if there is an error, you can read the error message with {#message}.
     #
     # @return `true` if Pandorabots returned an error.
     def error?
-      !self.success?
+      !success?
     end
 
     # @return [String] The error message as returned by Pandorabots, if an error occured.
     def message
-      return nil if self.success?
+      return nil if success?
+
       @message ||= @xml.xpath('/result/message').first.text
     end
 
-    alias_method :error, :message
-    alias_method :error_message, :message
+    alias error message
+    alias error_message message
 
     # @return [String] The botid of the bot this result is for.
     def botid

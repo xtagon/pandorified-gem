@@ -41,8 +41,13 @@ module Pandorified
     #
     # @return [String] The bot's response text.
     def talk!(input)
-      result = self.talk(input)
-      raise Pandorified::PandorabotsError, "Pandorabots returned status #{result.status}: #{result.message}" if result.error?
+      result = talk(input)
+
+      if result.error?
+        msg = "Pandorabots returned status #{result.status}: #{result.message}"
+        raise Pandorified::PandorabotsError, msg
+      end
+
       result.that
     end
   end
