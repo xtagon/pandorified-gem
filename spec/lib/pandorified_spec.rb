@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe Pandorified do
+describe Pandorified do
   describe '#talk!' do
     let(:input) { 'Are you a robot?' }
     let(:botid) { 'np218q9s7r346nqo' }

@@ -4,11 +4,18 @@ require 'pandorified/version'
 require 'pandorified/result'
 require 'pandorified/session'
 
+# This is the top-level module for interacting with the Pandorabots API.
+#
+# There are some sugar methods which delegate to {Pandorified::Session} under
+# the hood.
 module Pandorified
   # Send a message to a bot and receive a response.
   #
-  # See {Pandorified::Result} for ways to handle the response, or use {.talk!} which raises an exception on errors.
-  # If you want to remember the {botid} and {custid} between multiple calls, you should use {Pandorabots::Session} instead of this method.
+  # See {Pandorified::Result} for ways to handle the response, or use {.talk!}
+  # which raises an exception on errors.
+  #
+  # If you want to remember the {botid} and {custid} between multiple calls,
+  # you should use {Pandorabots::Session} instead of this method.
   #
   # @param [String] input Text to say to the bot.
   # @param [String] botid A valid Pandorabots botid.
@@ -21,10 +28,14 @@ module Pandorified
 
   # Send a message to a bot and receive a response (if successsful).
   #
-  # If Pandorabots responds with an error, {Pandorified::PandorabotsError} is raised.
-  # If you'd rather check for and handle the error yourself, use {.talk} instead of this method.
+  # If Pandorabots responds with an error, {Pandorified::PandorabotsError} is
+  # raised.
   #
-  # If you want to remember the {botid} and {custid} between multiple calls, you should use {Pandorabots::Session} instead of this method.
+  # If you'd rather check for and handle the error yourself, use {.talk}
+  # instead of this method.
+  #
+  # If you want to remember the {botid} and {custid} between multiple calls,
+  # you should use {Pandorabots::Session} instead of this method.
   #
   # @param [String] input Text to say to the bot.
   # @param [String] botid A valid Pandorabots botid.

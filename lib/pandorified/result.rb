@@ -6,6 +6,8 @@ require 'nokogiri'
 module Pandorified
   API_URL = 'https://www.pandorabots.com/pandora/talk-xml'
 
+  # The result of sending a message to a bot, including the response message if
+  # successful.
   class Result
     def initialize(params)
       @xml = Nokogiri::XML(RestClient.post(API_URL, params))
@@ -25,7 +27,8 @@ module Pandorified
       @status ||= @xml.xpath('/result/@status').first.value.to_i
     end
 
-    # @return `true` if this result was successful (no error was returned by Pandorabots), `false` otherwise.
+    # @return `true` if this result was successful (no error was returned by
+    #   Pandorabots), `false` otherwise.
     def success?
       status.zero?
     end
@@ -33,14 +36,16 @@ module Pandorified
     alias ok? success?
     alias successful? success?
 
-    # @note After checking if there is an error, you can read the error message with {#message}.
+    # @note After checking if there is an error, you can read the error message
+    #   with {#message}.
     #
     # @return `true` if Pandorabots returned an error.
     def error?
       !success?
     end
 
-    # @return [String] The error message as returned by Pandorabots, if an error occured.
+    # @return [String] The error message as returned by Pandorabots, if an
+    #   error occured.
     def message
       return nil if success?
 
