@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
 
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'nokogiri', '>= 1.13.4'
+  spec.add_runtime_dependency 'nokogiri', '>= 1.13.6'
   spec.add_runtime_dependency 'rest-client', '>= 1.7.3'
 
   spec.add_development_dependency 'rspec'
