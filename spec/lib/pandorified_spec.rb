@@ -45,7 +45,7 @@ describe Pandorified do
     end
 
     context 'when unsuccessful' do
-      pending { is_expected.to raise_error(described_class::PandorabotsError) }
+      pending { expect { subject }.to raise_error(described_class::PandorabotsError) }
     end
   end
 end
