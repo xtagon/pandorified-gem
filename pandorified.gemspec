@@ -15,6 +15,8 @@ Gem::Specification.new do |spec|
     Pandorified makes it easy for your Ruby scripts to interact with chat bots hosted on Pandorabots.
   DOC
 
+  spec.metadata = { 'rubygems_mfa_required' => 'true' }
+
   spec.files = `git ls-files`.split("\n")
   spec.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
 
