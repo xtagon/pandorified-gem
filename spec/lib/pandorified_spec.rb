@@ -45,7 +45,29 @@ describe Pandorified do
     end
 
     context 'when unsuccessful' do
-      pending { expect { subject }.to raise_error(described_class::PandorabotsError) }
+      subject { described_class.talk!(input, botid, custid) }
+
+      let(:response_body) do
+        <<~XML
+          <result status="1" botid="#{botid}" custid="fec7cfc40e5b751a"><input>#{input}</input><message>Something went wrong!</message></result>"
+        XML
+      end
+
+      let(:response_headers) do
+        { content_type: 'text/xml' }
+      end
+
+      before :each do
+        stub_request(:post, 'https://www.pandorabots.com/pandora/talk-xml')
+          .with(body: request_body)
+          .to_return(
+            status: 200,
+            body: response_body,
+            headers: response_headers
+          )
+      end
+
+      it { expect { subject }.to raise_error(described_class::PandorabotsError) }
     end
   end
 end
