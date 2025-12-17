@@ -1,0 +1,10 @@
+{
+  "name": "pandorified-gem",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+  "remoteUser": "vscode",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "postCreateCommand": "BUNDLE_JOBS=$(nproc) bundle install"
+}
