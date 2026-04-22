@@ -10,6 +10,8 @@ Gem::Specification.new do |spec|
   spec.authors     = 'Justin Workman'
   spec.email       = 'xtagon@gmail.com'
   spec.summary     = 'A Ruby client for the Pandorabots API.'
+  spec.license     = 'MIT'
+  spec.required_ruby_version = '>= 3.0'
 
   spec.description = <<~DOC.chomp
     Pandorified makes it easy for your Ruby scripts to interact with chat bots hosted on Pandorabots.
