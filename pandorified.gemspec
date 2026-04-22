@@ -25,8 +25,6 @@ Gem::Specification.new do |spec|
 
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'rest-client', '>= 1.7.3'
-
   spec.add_development_dependency 'rake', '~> 13.2'
   spec.add_development_dependency 'bundler-audit'
   spec.add_development_dependency 'rspec'

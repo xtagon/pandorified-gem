@@ -94,6 +94,24 @@ describe Pandorified do
         expect(result.message).to eq('Something went wrong!')
       end
     end
+
+    context 'when the HTTP response is non-success' do
+      subject(:result) { described_class.talk(input, botid, custid) }
+
+      before :each do
+        stub_request(:post, 'https://www.pandorabots.com/pandora/talk-xml')
+          .with(body: request_body)
+          .to_return(
+            status: 404,
+            body: 'Not Found',
+            headers: { content_type: 'text/plain' }
+          )
+      end
+
+      it 'raises an HTTP error' do
+        expect { result }.to raise_error(Net::HTTPClientException)
+      end
+    end
   end
 
   describe '.talk!' do

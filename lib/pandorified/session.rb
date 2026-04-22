@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 
+require 'net/http'
 require 'pandorified/result'
+require 'uri'
 
 module Pandorified
+  API_URL = 'https://www.pandorabots.com/pandora/talk-xml'
+
   # Raised when Pandorabots returns an API result with a non-zero status.
   class PandorabotsError < StandardError; end
 
@@ -33,11 +37,12 @@ module Pandorified
     #
     # @return [Pandorified::Result] The bot's response as a result object.
     def talk(input)
-      result = Pandorified::Result.new(
+      response_body = post_talk_xml!(
         botid: @botid,
         custid: @custid,
         input: input
       )
+      result = Pandorified::Result.new(response_body)
 
       @custid ||= result.custid if result.success?
 
@@ -66,6 +71,20 @@ module Pandorified
       end
 
       result.that
+    end
+
+    private
+
+    def post_talk_xml!(params)
+      uri = URI(API_URL)
+      request = Net::HTTP::Post.new(uri)
+      request.set_form_data(params)
+
+      Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == 'https') do |http|
+        response = http.request(request)
+        response.value
+        response.body
+      end
     end
   end
 end

@@ -1,17 +1,14 @@
 # frozen_string_literal: true
 
-require 'rest_client'
 require 'rexml/document'
 require 'rexml/xpath'
 
 module Pandorified
-  API_URL = 'https://www.pandorabots.com/pandora/talk-xml'
-
   # The result of sending a message to a bot, including the response message if
   # successful.
   class Result
-    def initialize(params)
-      @xml = REXML::Document.new(RestClient.post(API_URL, params).to_s)
+    def initialize(response_body)
+      @xml = REXML::Document.new(response_body)
     end
 
     # @return [String] The bot's response to the input.
